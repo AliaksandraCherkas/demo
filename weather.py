@@ -19,11 +19,11 @@ def start(message):
     bot.reply_to(message, f"There are {data['main']['temp']} C-degrees in {city.capitalize()}")
 
 
-    # if req.status_code == 200:
-    #     data = json.loads(req.text)
-    #     bot.reply_to(message, f"There are {data['main']['temp']} C-degrees in {city.capitalize()}")
-    # else:
-    #     bot.reply_to(message, 'non-existent city')
+    if req.status_code == 200:
+         data = json.loads(req.text)
+         bot.reply_to(message, f"There are {data['main']['temp']} C-degrees in {city.capitalize()}")
+     else:
+         bot.reply_to(message, 'non-existent city')
 
 
 
